@@ -13,6 +13,16 @@ import numpy as np
 
 random_integers = np.random.randint(-10, 36, size=(365))
 print(random_integers)
+d = []
+
+for i in random_integers:
+    if i > -1:
+        d.append(i)
+    else:
+        d.append(0)
+massiv = np.array(d)
+
+
 
 m = 0
 i = 0
@@ -55,8 +65,9 @@ fig = plt.figure(figsize=(10, 6))
 x = list(range(1,366))
 y = random_integers
 
-ax1 = fig.add_axes([0.1, 0.4, 0.8, 0.5])
-ax1.plt.plot(x, y)
+
+plt.plot(x, y)
+plt.plot(x, massiv, color='red')
 plt.title("График погоды")
 plt.xlabel("Дни")
 plt.ylabel("Погода")
